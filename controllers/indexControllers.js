@@ -30,9 +30,45 @@ const contact = async (req, res) => {
     }
 }
 
+const signUp = async (req, res) => {
+    try {
+        res.render('signUp');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const login = async (req, res) => {
+    try {
+        res.render('login');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const payment = async (req, res) => {
+    try {
+        res.render('payment');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const order = async (req, res) => {
+    try {
+        res.render('order');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
     home, 
     about, 
     services, 
-    contact
+    contact,
+    signUp,
+    login,
+    payment,
+    order
 }

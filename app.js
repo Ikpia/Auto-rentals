@@ -9,9 +9,18 @@ app.set('view engine', 'ejs');
 // port number
 const PORT = process.env.PORT || 3000;  
 
-app.get('/', (req, res) => {
-    res.render('index');
-});
+const indexController = require('./controllers/indexControllers');
+const register = require('./controllers/register');
+
+app.get('/', indexController.home);
+app.get('/signUp', indexController.signUp);
+app.get('/login', indexController.login);
+app.get('/car', indexController.car);
+app.get('/about', indexController.about);
+app.get('/service', indexController.services);
+app.get('/contact', indexController.contact);
+app.get('/payment', indexController.payment);
+app.get('/order', indexController.order);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`)
