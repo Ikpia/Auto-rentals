@@ -46,6 +46,14 @@ const login = async (req, res) => {
     }
 }
 
+const car = async (req, res) => {
+    try {
+        res.render('car');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 const payment = async (req, res) => {
     try {
         res.render('payment');
@@ -67,6 +75,7 @@ module.exports = {
     about, 
     services, 
     contact,
+    car,
     signUp,
     login,
     payment,
