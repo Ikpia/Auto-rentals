@@ -13,7 +13,8 @@ const indexController = require('./controllers/indexControllers');
 const register = require('./controllers/register');
 
 app.get('/', indexController.home);
-app.get('/signUp', indexController.signUp);
+app.get('/signup', indexController.signUp);
+app.post('/signup', register.signUp);
 app.get('/login', indexController.login);
 app.get('/car', indexController.car);
 app.get('/about', indexController.about);
