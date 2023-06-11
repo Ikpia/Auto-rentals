@@ -12,6 +12,14 @@ const carDetailsSchema = new mongoose.Schema({
         type:String,
         require:true
     },
+    year:{
+        type:String,
+        require:true
+    },
+    distance:{
+        type:String,
+        require:true
+    }
 },
 {
 timestamps:true
