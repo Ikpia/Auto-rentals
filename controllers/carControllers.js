@@ -64,7 +64,7 @@ const car9 = new CarDetails({
 });
 
 const cars = [car1, car2, car3, car4, car5, car6, car7, car8, car9];
-const car = carDetails.insertMany(cars)
+const car = CarDetails.insertMany(cars)
 console.log(car);
 
 
