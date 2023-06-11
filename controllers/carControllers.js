@@ -44,21 +44,21 @@ const car6 = new CarDetail({
 const car7 = new CarDetail({
     name: 'Sienna',
     price: 35000,
-    image: 'https://images.unsplash.com/photo-1580894744768-4a5b8b0aeaab?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG95b3RvJTIwY2FtcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80',
+    image: 'img/car-rent-7.jpg',
     year: '2023',
     distance: '70000'
 });
 const car8 = new CarDetail({
     name: 'Tacoma',
     price: 40000,
-    image: 'https://images.unsplash.com/photo-1580894744768-4a5b8b0aeaab?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG95b3RvJTIwY2FtcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80',
+    image: 'img/car-rent-8.jpg',
     year: '2023',
     distance: '80000'
 });
 const car9 = new CarDetail({
     name: 'Toyota Tundra',
     price: 45000,
-    image: 'https://images.unsplash.com/photo-1580894744768-4a5b8b0aeaab?ixid=Mnwx.MjA3fDB8MHxzZWFyY2h8Mnx8dG95b3RvJTIwY2FtcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80',
+    image: 'img/car-rent-9.jpg',
     year: '2023',
     distance: '90000'
 });
