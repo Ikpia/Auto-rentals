@@ -1,61 +1,61 @@
-const CarDetail = require('../models/carDetail'); // import CarDetails model
-const car1 = new CarDetails({
+const CarDetail = require('../models/carDetail'); // import CarDetail model
+const car1 = new CarDetail({
     name: 'Toyota Camry',
     price: 10000,
     image: 'img/car-rent-1.png',
     year: '2021',
     distance: '10000'
 });
-const car2 = new CarDetails({
+const car2 = new CarDetail({
     name: 'Corolla',
     price: 12000,
     image: 'img/car-rent-2.png',
     year: '2019',
     distance: '20000'
 });
-const car3 = new CarDetails({
+const car3 = new CarDetail({
     name: 'Avalon',
     price: 15000,
     image: 'img/car-rent-3.png',
     year: '2022',
     distance: '30000'
 });
-const car4 = new CarDetails({
+const car4 = new CarDetail({
     name: 'Highlander',
     price: 20000,
     image: 'img/car-rent-4.png',
     year: '2022',
     distance: '40000'
 });
-const car5 = new CarDetails({
+const car5 = new CarDetail({
     name: 'Toyota RAV4',
     price: 25000,
     image: 'img/car-rent-5.png',
     year: '2023',
     distance: '50000'
 });
-const car6 = new CarDetails({
+const car6 = new CarDetail({
     name: 'Toyota Venza',
     price: 30000,
     image: 'img/car-rent-6.png',
     year: '2023',
     distance: '60000'
 });
-const car7 = new CarDetails({
+const car7 = new CarDetail({
     name: 'Sienna',
     price: 35000,
     image: 'https://images.unsplash.com/photo-1580894744768-4a5b8b0aeaab?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG95b3RvJTIwY2FtcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80',
     year: '2023',
     distance: '70000'
 });
-const car8 = new CarDetails({
+const car8 = new CarDetail({
     name: 'Tacoma',
     price: 40000,
     image: 'https://images.unsplash.com/photo-1580894744768-4a5b8b0aeaab?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8dG95b3RvJTIwY2FtcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80',
     year: '2023',
     distance: '80000'
 });
-const car9 = new CarDetails({
+const car9 = new CarDetail({
     name: 'Toyota Tundra',
     price: 45000,
     image: 'https://images.unsplash.com/photo-1580894744768-4a5b8b0aeaab?ixid=Mnwx.MjA3fDB8MHxzZWFyY2h8Mnx8dG95b3RvJTIwY2FtcmV8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80',
