@@ -60,7 +60,8 @@ const login = async (req, res) => {
 
 const carRoute = async (req, res) => {
     try {
-        res.render('car');
+        const car = await CarDetail.find({});
+        res.render('car', {car: car});
     } catch (error) {
         console.log(error);
     }
@@ -82,6 +83,21 @@ const order = async (req, res) => {
     }
 }
 
+const team = async (req, res) => {
+    try {
+        res.render('team');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const testimonial = async (req, res) => {
+    try {
+        res.render('testimonial');
+    } catch (error) {
+        console.log(error);
+    }
+}
 module.exports = {
     home, 
     about, 
@@ -91,5 +107,7 @@ module.exports = {
     signUp,
     login,
     payment,
-    order
+    order,
+    team,
+    testimonial
 }

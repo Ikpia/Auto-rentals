@@ -22,6 +22,8 @@ app.get('/service', indexController.services);
 app.get('/contact', indexController.contact);
 app.get('/payment', indexController.payment);
 app.get('/order', indexController.order);
+app.get('/team', indexController.team);
+app.get('/testimonial', indexController.testimonial);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`)
