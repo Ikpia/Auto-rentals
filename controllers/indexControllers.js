@@ -1,6 +1,8 @@
+const car = require('./carControllers');
+
 const home = async (req, res) => {
     try {
-        res.render('index');
+        res.render('index', {car: car});
     } catch (error) {
         console.log(error);
     }
