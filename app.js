@@ -16,7 +16,7 @@ app.get('/', indexController.home);
 app.get('/signup', indexController.signUp);
 app.post('/signup', register.signUp);
 app.get('/login', indexController.login);
-app.get('/car', indexController.car);
+app.get('/car', indexController.carRoute);
 app.get('/about', indexController.about);
 app.get('/service', indexController.services);
 app.get('/contact', indexController.contact);
