@@ -26,5 +26,5 @@ timestamps:true
 }
 );
 
-const CarDetails = mongoose.model('CarDetails', carDetailsSchema);
-module.exports = CarDetails;
+const CarDetail = mongoose.model('CarDetail', carDetailsSchema);
+module.exports = CarDetail;
