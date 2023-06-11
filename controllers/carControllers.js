@@ -64,16 +64,5 @@ const car9 = new CarDetail({
 });
 
 const cars = [car1, car2, car3, car4, car5, car6, car7, car8, car9];
-let car = [];
-if (CarDetail.find({}).count() === 0) {
-    CarDetail.insertMany(cars)
-        .then(res => {
-            car = res;
-        })
-        .catch(err => {
-            console.log(err);
-        });
-}
 
-
-module.exports = car;
+module.exports = cars;

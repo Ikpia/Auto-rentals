@@ -1,8 +1,18 @@
-const car = require('./carControllers');
+const CarDetail = require('../models/carDetail');
+const CarDetails = require('../models/carDetail');
+const cars = require('./carControllers');
 
 const home = async (req, res) => {
     try {
-        res.render('index', {car: car});
+        const car = await CarDetail.find({});
+        if (car.length === 0) {
+            await CarDetail.insertMany(cars);
+            res.redirect('/');
+        } else {
+            console.log(car);
+            res.render('index', {car: car});
+        }
+        
     } catch (error) {
         console.log(error);
     }
