@@ -1,7 +1,7 @@
 const CarDetail = require('../models/carDetail');
 const CarDetails = require('../models/carDetail');
 const cars = require('./carControllers');
-const selectedCar = {};
+let selectedCar = {};
 
 const home = async (req, res) => {
     try {

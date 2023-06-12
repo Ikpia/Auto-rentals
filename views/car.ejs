@@ -37,14 +37,14 @@
                                                 <input type="hidden" name="year" value = "<%=car[i].year %>">
                                                 <input type="hidden" name="image" value = "<%=car[i].image%>">
                                                 <input type="hidden" name="distance" value = "<%=car[i].distance %>">
-                    
+                                                <input type="hidden" name="price" value = "<%=car[i].price %>">
                                                 
                                             <div class="px-2">
                                                 <i class="fa fa-road text-primary mr-1"></i>
                                                 <span><%=car[i].distance %></span>
                                             </div>
                                         </div>
-                                        <input type="submit" value="$<%=car[i].price %>/Day" class="btn btn-primary">
+                                        <button type="submit" class="btn btn-primary">$<%=car[i].price %>/Day</button>
                                         
                                         </form>
                                     </div>
