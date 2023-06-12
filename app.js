@@ -1,5 +1,6 @@
 require('dotenv').config();
 const express = require('express');
+const stripe = require('stripe')(process.env.SECRET_KEY);
 const dbConnect = require('./models/connect');
 const bodyParser = require('body-parser');
 // express app

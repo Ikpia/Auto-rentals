@@ -1,3 +1,5 @@
+require('dotenv').config();
+const stripe = require('stripe')(process.env.SECRET_KEY);
 const payment = async (req, res) => {
     const price = req.body.price;
     const name = req.body.name;
