@@ -1,6 +1,6 @@
 const payment = async (req, res) => {
     const price = req.body.price;
-    const choice = req.body.choice;
+    const name = req.body.name;
     const Email = req.body.email
     console.log(req.body)
     const session = await stripe.checkout.sessions.create({
@@ -9,7 +9,7 @@ const payment = async (req, res) => {
           price_data: {
             currency: 'usd',
             product_data: {
-              name: choice,
+              name: name,
             },
             unit_amount: price*100,
           },
@@ -31,3 +31,5 @@ const payment = async (req, res) => {
     }
     
 }
+
+module.exports = payment;

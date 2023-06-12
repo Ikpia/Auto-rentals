@@ -13,6 +13,7 @@ const PORT = process.env.PORT || 3000;
 
 const indexController = require('./controllers/indexControllers');
 const register = require('./controllers/register');
+const payment = require('./controllers/payment');
 
 app.get('/', indexController.home);
 app.get('/signup', indexController.signUp);
@@ -25,6 +26,7 @@ app.get('/about', indexController.about);
 app.get('/service', indexController.services);
 app.get('/contact', indexController.contact);
 app.get('/payment', indexController.payment);
+app.post('/payments', payment);
 app.get('/order', indexController.order);
 app.get('/team', indexController.team);
 app.get('/testimonial', indexController.testimonial);
