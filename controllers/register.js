@@ -1,4 +1,7 @@
-const bodyParser = require('../middleware/middleware');
+const express = require('express');
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.urlencoded({ extended: true }));  // parse application/x-www-form-urlencoded
 const SignUp = require('../models/signUp');
 
 const signUp = async (req, res) => {

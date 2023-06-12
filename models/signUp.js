@@ -6,7 +6,7 @@ const signUpSchema = new mongoose.Schema({
     },
 
     phone:{
-        type:Number,
+        type:String,
         require:true
     },
 

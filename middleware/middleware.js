@@ -1,4 +1,4 @@
+const express = require('express');
+const app = express();
 const bodyParser = require('body-parser');
-bodyParser.urlencoded({ extended: true });  // parse application/x-www-form-urlencoded
-
-module.exports = bodyParser;
+module.exports = app.use(bodyParser.urlencoded({ extended: true }));  // parse application/x-www-form-urlencoded
