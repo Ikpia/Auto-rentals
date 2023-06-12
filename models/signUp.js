@@ -17,12 +17,17 @@ const signUpSchema = new mongoose.Schema({
         match:/^\S+@\S+\.\S+$/
     },
 
+    profession:{
+        type:String,
+        require:true
+    },
+
     password:{
         type:String,
         require:true
     },
 
-    profession:{
+    repeat_password:{
         type:String,
         require:true
     },
