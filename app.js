@@ -1,9 +1,11 @@
 require('dotenv').config();
 const express = require('express');
 const dbConnect = require('./models/connect');
+const bodyParser = require('body-parser');
 // express app
 const app = express();
 
+app.use(bodyParser.urlencoded({ extended: true }));  // parse application/x-www-form-urlencoded
 app.use(express.static('public'));
 app.set('view engine', 'ejs');
 // port number
