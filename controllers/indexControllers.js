@@ -1,6 +1,7 @@
 const CarDetail = require('../models/carDetail');
 const CarDetails = require('../models/carDetail');
 const cars = require('./carControllers');
+const selectedCar = {};
 
 const home = async (req, res) => {
     try {
@@ -69,7 +70,7 @@ const carRoute = async (req, res) => {
 
 const payment = async (req, res) => {
     try {
-        res.render('payment');
+        res.render('payment', {selectedCar: selectedCar});
     } catch (error) {
         console.log(error);
     }
@@ -98,6 +99,17 @@ const testimonial = async (req, res) => {
         console.log(error);
     }
 }
+
+const selectCar = async (req, res) => {
+    selectedCar = req.body;
+    console.log(selectedCar);
+    try {
+        res.redirect('/payment');
+    } catch (error) {
+        console.log(error);
+    }   
+}
+
 module.exports = {
     home, 
     about, 
@@ -109,5 +121,6 @@ module.exports = {
     payment,
     order,
     team,
-    testimonial
+    testimonial,
+    selectCar
 }

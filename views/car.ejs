@@ -32,12 +32,21 @@
                                                 <i class="fa fa-cogs text-primary mr-1"></i>
                                                 <span>AUTO</span>
                                             </div>
+                                            <form action="/car" method="post">
+                                                <input type="hidden" name="name" value = "<%=car[i].name%>">
+                                                <input type="hidden" name="year" value = "<%=car[i].year %>">
+                                                <input type="hidden" name="image" value = "<%=car[i].image%>">
+                                                <input type="hidden" name="distance" value = "<%=car[i].distance %>">
+                    
+                                                
                                             <div class="px-2">
                                                 <i class="fa fa-road text-primary mr-1"></i>
                                                 <span><%=car[i].distance %></span>
                                             </div>
                                         </div>
-                                        <a class="btn btn-primary px-3" href="/car">$<%=car[i].price %>/Day</a>
+                                        <input type="submit" value="$<%=car[i].price %>/Day" class="btn btn-primary">
+                                        
+                                        </form>
                                     </div>
                                 </div>
                            <% } %>

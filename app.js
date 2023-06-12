@@ -20,6 +20,7 @@ app.post('/signup', register.signUp);
 app.post('/login', register.login);
 app.get('/login', indexController.login);
 app.get('/car', indexController.carRoute);
+app.post('/car', indexController.selectCar);
 app.get('/about', indexController.about);
 app.get('/service', indexController.services);
 app.get('/contact', indexController.contact);

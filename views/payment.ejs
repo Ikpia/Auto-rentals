@@ -15,13 +15,13 @@
     <!-- Detail Start -->
     <div class="container-fluid pt-5">
         <div class="container pt-5 pb-3">
-            <h1 class="display-4 text-uppercase mb-5">Mercedes Benz R3</h1>
+            <h1 class="display-4 text-uppercase mb-5"><%=selectedCar.name%></h1>
             <div class="row align-items-center pb-2">
                 <div class="col-lg-6 mb-4">
-                    <img class="img-fluid" src="img/bg-banner.jpg" alt="">
+                    <img class="img-fluid" src="<%=selectedCar.image%>" alt="">
                 </div>
                 <div class="col-lg-6 mb-4">
-                    <h4 class="mb-2">$99.00/Day</h4>
+                    <h4 class="mb-2">$<%=selectedCar.price%>/Day</h4>
                     <div class="d-flex mb-3">
                         <h6 class="mr-2">Rating:</h6>
                         <div class="d-flex align-items-center justify-content-center mb-1">
@@ -48,7 +48,7 @@
             <div class="row mt-n3 mt-lg-0 pb-4">
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-car text-primary mr-2"></i>
-                    <span>Model: 2015</span>
+                    <span>Model: <%=selectedCar.year%></span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-cogs text-primary mr-2"></i>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-car text-primary mr-2"></i>
-                    <span>Model: 2015</span>
+                    <span>Model: <%=selectedCar.year%></span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-cogs text-primary mr-2"></i>
@@ -80,7 +80,7 @@
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-car text-primary mr-2"></i>
-                    <span>Model: 2015</span>
+                    <span>Model: <%=selectedCar.year%></span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-cogs text-primary mr-2"></i>
@@ -88,7 +88,7 @@
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-road text-primary mr-2"></i>
-                    <span>20km/liter</span>
+                    <span><%=selectedCar.distance%>km/liter</span>
                 </div>
                 <div class="col-md-3 col-6 mb-2">
                     <i class="fa fa-eye text-primary mr-2"></i>
