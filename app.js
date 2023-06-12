@@ -15,6 +15,7 @@ const register = require('./controllers/register');
 app.get('/', indexController.home);
 app.get('/signup', indexController.signUp);
 app.post('/signup', register.signUp);
+app.post('/login', register.login);
 app.get('/login', indexController.login);
 app.get('/car', indexController.carRoute);
 app.get('/about', indexController.about);

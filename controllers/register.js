@@ -2,9 +2,13 @@ const bodyParser = require('../middleware/middleware');
 const SignUp = require('../models/signUp');
 
 const signUp = async (req, res) => {
-
+    console.log(req.body);
     const sign_up = new SignUp(req.body);
     try {
+        if (req.body.password !== req.body.repeat_password) {
+            res.send('<h1>Passwords do not match!</h1>');
+            res.redirect('/signUp');
+        }
         const result = await SignUp.find({ email: req.body.email });
         if (!result) {
             await sign_up.save()
