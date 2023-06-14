@@ -110,6 +110,30 @@ const selectCar = async (req, res) => {
     }   
 }
 
+const success = async (req, res) => {
+    try {
+        res.render('success');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const cancel = async (req, res) => {
+    try {
+        res.render('cancel');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
+const unregisteredEmail = async (req, res) => {
+    try {
+        res.render('wrong_email');
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 module.exports = {
     home, 
     about, 
@@ -122,5 +146,8 @@ module.exports = {
     order,
     team,
     testimonial,
-    selectCar
+    selectCar,
+    success,
+    cancel,
+    unregisteredEmail
 }

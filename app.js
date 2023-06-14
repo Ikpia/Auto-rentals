@@ -27,10 +27,13 @@ app.get('/about', indexController.about);
 app.get('/service', indexController.services);
 app.get('/contact', indexController.contact);
 app.get('/payment', indexController.payment);
-app.post('/payments', payment);
+app.post('/payments', payment.payment);
 app.get('/order', indexController.order);
 app.get('/team', indexController.team);
 app.get('/testimonial', indexController.testimonial);
+app.get('/success', indexController.success);
+app.get('/cancel', indexController.cancel);
+app.get('/wrong_email', indexController.unregisteredEmail);
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}.`)
