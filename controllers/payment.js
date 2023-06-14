@@ -1,9 +1,10 @@
 require('dotenv').config();
+const payed_email = '';
 const stripe = require('stripe')(process.env.SECRET_KEY);
 const payment = async (req, res) => {
     const price = req.body.price;
     const name = req.body.name;
-    const Email = req.body.email
+    payed_email = req.body.email;
     console.log(req.body)
     const session = await stripe.checkout.sessions.create({
       line_items: [
@@ -19,9 +20,9 @@ const payment = async (req, res) => {
         },
       ],
       mode: 'payment',
-      success_url: 'https://fine-teal-chicken-tie.cyclic.app/success',
-      cancel_url: 'https://fine-teal-chicken-tie.cyclic.app/cancel',
-      customer_email: Email
+      success_url: `http://localhost:{process.env.PORT}/success`,
+      cancel_url: `http://localhost:{process.env.PORT}/cancel`,
+      customer_email: payed_email
       
     });
     let url = session.url
