@@ -1,13 +1,13 @@
 require('dotenv').config();
-const signup = require('../models/signUp');
-const payed_email = '';
+const SignUp = require('../models/signUp');
+let payed_email = '';
 const stripe = require('stripe')(process.env.SECRET_KEY);
 const payment = async (req, res) => {
     const price = req.body.price;
     const name = req.body.name;
     payed_email = req.body.email;
     console.log(req.body);
-    
+
     const check_email = await SignUp.find({email: payed_email});
     if (!check_email) {
         res.redirect('/wrong_email');
