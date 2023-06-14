@@ -1,7 +1,7 @@
 require('dotenv').config();
 const SignUp = require('../models/signUp');
-let payed_email = '';
 const stripe = require('stripe')(process.env.SECRET_KEY);
+let payed_email = '';
 const payment = async (req, res) => {
     const price = req.body.price;
     const name = req.body.name;
@@ -27,14 +27,14 @@ const payment = async (req, res) => {
         },
       ],
       mode: 'payment',
-      success_url: `http://localhost:{process.env.PORT}/success`,
-      cancel_url: `http://localhost:{process.env.PORT}/cancel`,
+      success_url: `http://localhost:${process.env.PORT}/success`,
+      cancel_url: `http://localhost:${process.env.PORT}/cancel`,
       customer_email: payed_email
       
     });
     let url = session.url
     if (url === session.url) {
-        
+      
         res.redirect(session.url)
     } else {
         res.redirect('/cancel')
