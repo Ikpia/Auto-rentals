@@ -78,7 +78,7 @@ const payment = async (req, res) => {
 
 const order = async (req, res) => {
     try {
-        res.render('order');
+        res.render('order', {selectedCar: selectedCar});
     } catch (error) {
         console.log(error);
     }

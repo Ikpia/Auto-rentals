@@ -16,26 +16,26 @@
         <div class="container pt-5">
             <div class="row">
                 <div class="col-lg-8 mb-5">
-                    <h1 class="display-4 text-uppercase mb-5">Mercedes Benz R3</h1>
+                    <h1 class="display-4 text-uppercase mb-5"><%=selectedCar.name%></h1>
                     <div class="row mx-n2 mb-3">
                         <div class="col-md-3 col-6 px-2 pb-2">
-                            <img class="img-fluid w-100" src="img/gallery-1.jpg" alt="">
+                            <img class="img-fluid w-100" src="<%=selectedCar.image%>" alt="">
                         </div>
                         <div class="col-md-3 col-6 px-2 pb-2">
-                            <img class="img-fluid w-100" src="img/gallery-2.jpg" alt="">
+                            <img class="img-fluid w-100" src="<%=selectedCar.image%>" alt="">
                         </div>
                         <div class="col-md-3 col-6 px-2 pb-2">
-                            <img class="img-fluid w-100" src="img/gallery-3.jpg" alt="">
+                            <img class="img-fluid w-100" src="<%=selectedCar.image%>" alt="">
                         </div>
                         <div class="col-md-3 col-6 px-2 pb-2">
-                            <img class="img-fluid w-100" src="img/gallery-4.jpg" alt="">
+                            <img class="img-fluid w-100" src="<%=selectedCar.image%>" alt="">
                         </div>
                     </div>
                     <p>Tempor erat elitr at rebum at at clita aliquyam consetetur. Diam dolor diam ipsum et, tempor voluptua sit consetetur sit. Aliquyam diam amet diam et eos sadipscing labore. Clita erat ipsum et lorem et sit, sed stet no labore lorem sit. Sanctus clita duo justo et tempor consetetur takimata eirmod, dolores takimata consetetur invidunt magna dolores aliquyam dolores dolore. Amet erat amet et magna</p>
                     <div class="row pt-2">
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-car text-primary mr-2"></i>
-                            <span>Model: 2015</span>
+                            <span>Model: <%=selectedCar.year%></span>
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-cogs text-primary mr-2"></i>
@@ -43,7 +43,7 @@
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-road text-primary mr-2"></i>
-                            <span>20km/liter</span>
+                            <span><%=selectedCar.distance%>km/liter</span>
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-eye text-primary mr-2"></i>
@@ -51,7 +51,7 @@
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-car text-primary mr-2"></i>
-                            <span>Model: 2015</span>
+                            <span>Model: <%=selectedCar.year%></span>
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-cogs text-primary mr-2"></i>
@@ -59,7 +59,7 @@
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-road text-primary mr-2"></i>
-                            <span>20km/liter</span>
+                            <span><%=selectedCar.distance%>km/liter</span>
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-eye text-primary mr-2"></i>
@@ -67,7 +67,7 @@
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-car text-primary mr-2"></i>
-                            <span>Model: 2015</span>
+                            <span>Model: <%=selectedCar.year%></span>
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-cogs text-primary mr-2"></i>
@@ -75,7 +75,7 @@
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-road text-primary mr-2"></i>
-                            <span>20km/liter</span>
+                            <span><%=selectedCar.distance%>km/liter</span>
                         </div>
                         <div class="col-md-3 col-6 mb-2">
                             <i class="fa fa-eye text-primary mr-2"></i>
@@ -87,6 +87,7 @@
                 <div class="col-lg-4 mb-5">
                     <div class="bg-secondary p-5">
                         <h3 class="text-primary text-center mb-4">Check Availability</h3>
+                        <form action="/order" method="post">
                         <div class="form-group">
                             <select class="custom-select px-4" style="height: 50px;">
                                 <option selected>Pickup Location</option>
@@ -126,6 +127,7 @@
                         <div class="form-group mb-0">
                             <button class="btn btn-primary btn-block" type="submit" style="height: 50px;">Check Now</button>
                         </div>
+                    </form>
                     </div>
                 </div>
             </div>
