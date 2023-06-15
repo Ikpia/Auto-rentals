@@ -1,8 +1,8 @@
 require("dotenv").config();
-const { createTransport, getTestMessageUrl } = require("nodemailer");   
+const nodemailer = require("nodemailer");   
 const payment = require('./payment');
 const pemail = payment.payed_email;
-console.log(pemail);
+/**console.log(pemail);
 
 const init_transporter = async () => {
     const transporter = createTransport({
@@ -40,5 +40,17 @@ const init_transporter = async () => {
         res.send('<h1>Something went wrong</h1>');
     }
 }
-  
+  */
+
+const order = async (req, res) => {
+try {
+
+  res.send('<h1>Your car will be in your location in 5hours</h1>');
+}
+catch (error) {
+    console.log(error);
+    res.send('<h1>Something went wrong</h1>');
+}
+}
+
   module.exports = order;
