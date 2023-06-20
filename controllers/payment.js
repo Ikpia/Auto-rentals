@@ -1,7 +1,24 @@
 require('dotenv').config();
 const SignUp = require('../models/signUp');
+const { createTransport, getTestMessageUrl } = require("nodemailer");
 const stripe = require('stripe')(process.env.SECRET_KEY);
 let payed_email = '';
+
+
+const init_transporter = async () => {
+  const transporter = createTransport({
+    host: "smtp.gmail.com",
+    port: process.env.HOST,
+    secure: true, // true for 465, false for other ports
+    auth: {
+      user:  process.env.EMAIL,
+      pass:  process.env.PASS,
+    },
+  });
+  return transporter;
+};
+
+
 const payment = async (req, res) => {
     const price = req.body.price;
     const name = req.body.name;
@@ -12,7 +29,19 @@ const payment = async (req, res) => {
     if (!check_email) {
         res.redirect('/wrong_email');
     }
-    
+
+    const send_payed_email = async ({ email }) => {
+      const transporter = await init_transporter();
+      const info = await transporter.sendMail({
+        from: process.env.EMAIL,
+        to: email,
+        subject: "Payment Received",
+        html: `<b>Your puchase of ${name} was successful</b>`,
+      });
+      console.log("Message sent: %s", info.messageId);
+      console.log("Preview URL: %s", getTestMessageUrl(info));
+    };
+
     const session = await stripe.checkout.sessions.create({
       line_items: [
         {
@@ -34,7 +63,8 @@ const payment = async (req, res) => {
     });
     let url = session.url
     if (url === session.url) {
-      
+        await send_payed_email({email:payed_email});
+        await SignUp.findOneAndUpdate({ email: payed_email }, { payments: 'paid' }, { new: true })
         res.redirect(session.url)
     } else {
         res.redirect('/cancel')
@@ -43,6 +73,5 @@ const payment = async (req, res) => {
 }
 
 module.exports = {
-  payment,
-  payed_email
+  payment
 }
