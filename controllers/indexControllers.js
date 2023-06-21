@@ -1,7 +1,11 @@
+const { createTransport, getTestMessageUrl } = require("nodemailer");
+const SignUp = require('../models/signUp');
 const CarDetail = require('../models/carDetail');
 const CarDetails = require('../models/carDetail');
 const cars = require('./carControllers');
 let selectedCar = {};
+const payments = require('./payment');
+const list_email = payments.list_email;
 
 const home = async (req, res) => {
     try {
@@ -111,7 +115,36 @@ const selectCar = async (req, res) => {
 }
 
 const success = async (req, res) => {
+    console.log(list_email)
+    const name = list_email[1];
+    const payed_email = list_email[0]
+    const init_transporter = async () => {
+        const transporter = createTransport({
+          host: "smtp.gmail.com",
+          port: process.env.HOST,
+          secure: true,
+          auth: {
+            user:  process.env.EMAIL,
+            pass:  process.env.PASS,
+          },
+        });
+        return transporter;
+      };
+      const send_payed_email = async ({ email }) => {
+        const transporter = await init_transporter();
+        const info = await transporter.sendMail({
+          from: process.env.EMAIL,
+          to: email,
+          subject: "Payment Received",
+          html: `<b>Your puchase of ${name} was successful</b>`,
+        });
+        console.log("Message sent: %s", info.messageId);
+        console.log("Preview URL: %s", getTestMessageUrl(info));
+      };
+
     try {
+        await  send_payed_email({email:payed_email});
+        await SignUp.findOneAndUpdate({ email: payed_email }, { payments: 'paid' }, { new: true })
         res.render('success');
     } catch (error) {
         console.log(error);
