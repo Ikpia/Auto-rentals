@@ -1,3 +1,4 @@
+//sign up page
 const mongoose = require('mongoose');
 const signUpSchema = new mongoose.Schema({
     name:{
