@@ -1,9 +1,12 @@
-
+require('dotenv').config();
+const bcrypt = require("bcrypt");
 const SignUp = require('../models/signUp');
+const saltRounds = parseInt(process.env.SALT_ROUNDS, 10);
 
 const signUp = async (req, res) => {
     console.log(req.body);
     const sign_up = new SignUp(req.body);
+    
     const result = await SignUp.find({ email: req.body.email });
     console.log(result)
     try {
@@ -13,14 +16,21 @@ const signUp = async (req, res) => {
         }
         
         if (result.length === 0) {
-            await sign_up.save()
-            .then((result) => {
-                console.log('User signed up successfully',result);
-                res.redirect('/car');
-        })
-        .catch((err) => {
-            console.log(err);
-        });
+            bcrypt.hash(sign_up.password, saltRounds)
+            .then((hash) => {
+                sign_up.password = hash;
+                sign_up.save()
+                .then((result) => {
+                    console.log('User signed up successfully',result);
+                    res.redirect('/car');
+                })
+                .catch((err) => {
+                console.log(err);
+                });
+            }).catch((err) => {
+                console.log(err);
+            });
+           
     }
     else {
         res.send('<h1>A User with this email exists!</h1>');
@@ -34,14 +44,20 @@ const signUp = async (req, res) => {
 const login = async (req, res) => {
     try {
         const input = req.body;
-        const email = await SignUp.find({ email: input.email });
-        const password = await SignUp.find({ password: input.password });
-        if (email && password) {
-            
-            res.redirect('/car');
+        const foundUser = await SignUp.findOne({ email: input.email });
+        if (foundUser) {
+            bcrypt.compare(input.password, foundUser.password)
+            .then((result) => {
+                if (result === true) {
+                    res.redirect('/car');
+                } else {
+                    res.send('<h1>Password is incorrect!</h1>');
+                }
+            }).catch((err) => {
+                console.log(err);
+            });
         } else {
-            
-            res.redirect('/login');
+            res.send('<h1>Email not found!, try login again or sign up</h1>');
         }
     } catch (error) {
         console.log(error);
