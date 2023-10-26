@@ -1,7 +1,7 @@
 
-## Car Rental Service
+## Auto-rentals
     
-This is a web application to rent cars and also buy cars.
+Auto-rentals is a web application to rent cars and also buy cars. It helps to bring car dealers and buyers together for the purpose of buying and selling
  
 
 ## Features
@@ -19,13 +19,13 @@ This is a web application to rent cars and also buy cars.
 Clone the project
 
 ```bash
-  git clone https://github.com/Ikpia/car-rental-service
+  git clone https://github.com/Ikpia/Auto-rentals
 ```
 
 Go to the project directory
 
 ```bash
-  cd car-rental-service
+  cd Auto-rentals
 ```
 
 Install dependencies
